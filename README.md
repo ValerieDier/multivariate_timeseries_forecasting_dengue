@@ -6,13 +6,13 @@ This notebook leverages multivariate timeseries modelling frameworks to forecast
 learning algorithms available for the prediction of a target variable over time, particularly when features or independant variables are provided to help establish causal relationships. 
 
 > This work is applicable to a broad array of sectors:
-* Maintenance and reliability of equipment  
-* Manufacturing process upsets or incidents  
-* Occupational health incidents  
-* Public health crises  
-* Security incidents  
-* Supply chain or logistic disruptions  
-* (...)
+> * Maintenance and reliability of equipment  
+> * Manufacturing process upsets or incidents  
+> * Occupational health incidents  
+> * Public health crises  
+> * Security incidents  
+> * Supply chain or logistic disruptions  
+> * (...)
 
 ## Data Overview  
 
@@ -32,6 +32,6 @@ the data provided.
 
 ## Models
 
-##### Advisors  
+##### Acknowledgements  
 
-Eric Elmonzino (check spelling), Brian Lynch, (add as you progress)
+I extend my appreciation to the many advisors at Lighthouse Labs for lending their expertise and providing frequent feedback.
