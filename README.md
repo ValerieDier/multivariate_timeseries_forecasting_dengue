@@ -11,7 +11,8 @@ learning algorithms available for the prediction of a target variable over time,
 > * Occupational health incidents  
 > * Public health crises  
 > * Security incidents  
-> * Supply chain or logistic disruptions  
+> * Supply chain or logistic disruptions 
+> * Financial default 
 > * (...)
 
 ## Data Overview  
@@ -28,10 +29,33 @@ the data provided.
 
 ## Main Steps  
 
-## EDA
+1. Explore the data for quality and integrity  
+2. Examine the variables' distributions, autocorrelation on the target (time t to t-k), correlations between target and lagged features  
+3. Develop an idea of the ideal time lags on which to model the timeseries  
+4. Model the timeseries using autoregression, (...tbd)  
+5. Evaluate model performance metrics between models   
+6. Select the best model developed   
+7. Run the test features through the best model to obtain predictions on dengue case counts  
+
+## EDA  
+
+Histograms and timeseries plot provide an idea of stationarity of the data, that is, whether the data's statistics (e.g. mean, variance) change with time.  Classical statistical
+forecasting methods require stationary data.  When data is found to be non-stationary, it can be differenced or log transformed.  Differencing is simply subtracting the data at
+time t-1 from the data at time t.
+
+The Augmented Dickey-Fuller test can be applied to the data to establish whether the data is stationary.  It will produce the statistic, critical values, and a p-value to support
+this effort.  
+
+Additionally, a look at autocorrelation plots for the target variable can give an indication of trending or seasonality, both of which are undesirable if stationarity is a criterion
+for modelling.  
+
+The target and features do not exhibit non-stationary characteristics per the Augmented Dickey-Fuller test, and will therefore not be differenced or otherwise transformed on a
+first-pass modelling basis.  As dengue fever case counts would logically change with weather patterns, which would represent seasonality, this may be revisited, time permitting.
 
 ## Models
 
+(working on it)
+
 ##### Acknowledgements  
 
-I extend my appreciation to the many advisors at Lighthouse Labs for lending their expertise and providing frequent feedback.
+I extend my appreciation to the many advisors at Lighthouse Labs for lending their expertise and insights.
