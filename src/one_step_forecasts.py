@@ -41,6 +41,8 @@ def random_forest_forecast(train, testX):
 	-----------
 	train : training data
 	testX : test data for the inputs or features
+	
+	With thanks to Jason Brownlee's Machine Learning Mastery site.
 	"""
 
 	train = asarray(train)
@@ -79,6 +81,8 @@ def walk_fwd_validation_rf(data, n_test):
 	data : dataset prior to splitting into train and test sets
 	n_test : number of rows desired for test set, taken from the end
              of the dataset
+
+	With thanks to Jason Brownlee's Machine Learning Mastery site.
 	"""
 
     predictions = list()
@@ -130,6 +134,8 @@ def xgboost_forecast(train, testX):
 	-----------
 	train : training data
 	testX : test data for the inputs or features
+
+	With thanks to Jason Brownlee's Machine Learning Mastery site.
 	"""
 
 	train = asarray(train)
@@ -167,6 +173,8 @@ def walk_forward_validation_xgb(data, n_test):
 	data : dataset prior to splitting into train and test sets
 	n_test : number of rows desired for test set, taken from the end
              of the dataset
+
+	With thanks to Jason Brownlee's Machine Learning Mastery site.
 	"""
 	
 	predictions = list()

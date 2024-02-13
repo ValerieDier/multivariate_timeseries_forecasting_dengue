@@ -32,6 +32,8 @@ def series_to_supervised_uv(data, n_in=1, n_out=1, dropnan=True):
 	n_in : number of lags desired, t-n_in (autoregression order), default is 1
 	n_out : number of 'forward lags' desired, t+n_out, default is 1
 	dropnan : default is True
+
+	With thanks to Jason Brownlee's Machine Learning Mastery site.
 	"""
 
 	n_vars = 1 if type(data) is list else data.shape[1]
@@ -86,6 +88,8 @@ def series_to_supervised_mv(data, n_in=1, n_out=1, dropnan=True):
 	n_in : number of lags desired, t-n_in (autoregression order), default is 1
 	n_out : number of 'forward lags' desired, t+n_out, default is 1
 	dropnan : default is True
+
+	With thanks to Jason Brownlee's Machine Learning Mastery site.
 	"""
 
 	n_vars = 1 if type(data) is list else data.shape[1]
@@ -118,6 +122,8 @@ def train_test_split_rows_reserved(data, n_test):
 	-----------
 	data : a dataframe or list of arrays M rows by N columns
 	n_test : number of rows to keep for the test set
+
+	With thanks to Jason Brownlee's Machine Learning Mastery site.
 	"""
 
 	return data[:-n_test, :], data[-n_test:, :]
