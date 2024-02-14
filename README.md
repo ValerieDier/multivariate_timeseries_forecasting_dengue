@@ -29,7 +29,10 @@ The dataset used is supplied by Driven Data as part of a practice competition (i
 (output, or the variable to predict), and a test set of features.  
 
 The features include many environmental variables largely encompassing air temperatures, precipitation, humididty metrics, and vegetation density.  The target variable is a count
-of dengue cases.  All data is recorded weekly, so one row represents a snapshot, and the next row is a snapshot taken a week later.
+of dengue cases.  All data is recorded weekly, so one row represents a snapshot, and the next row is a snapshot taken a week later.  The weekly sampling frequency intuitively seems 
+correct given the incubation time of the virus and the vectors for its spread.
+
+![Alt Text](./img/dengue_infection_cycle_nature.jpeg)
 
 Unfortunately, as this is set up for a competition, a test set of labels is not provided, so the test set of features cannot be used to obtain model evaluation metrics on unseen 
 data.  This is addressed by splitting the training sets into training and test sets as though these were all the data provided.
@@ -193,13 +196,16 @@ was used to preprocess the inputs to a model.  (more?)
 * There were variables that seemed almost the same, including many temperature variables.  Much more investigation is required to understand their inclusion.
 * Producing correctly formatted timeseries data for supervised learning takes many steps and checks.  It's time-consuming even when using another's template, especially if it's 
 being adapted to a different situation.
-*
+*Burden of choice: in a time when modelling approaches can be trialled very quickly across a broad swath of algorithms, a better methodology for choosing a modelling framework is
+sorely needed.  This project was an early prospecting endeavour, and by no means an exhaustive review of all options.  There is much to explore from here.
 
 
 ## Development Work  
 ### Partial Autocorrelation  
 Another tool in the timeseries modelling toolbox is partial autocorrelation.  This takes into account the relationships between all variables, rather than just considering the
 relationship between two variables of interest.  Further study is required to apply.
+
+Statistics by Jim often delivers a good starting point:  https://statisticsbyjim.com/time-series/autocorrelation-partial-autocorrelation/  
 
 ### Feature Selection  
 The focus of this project was to demonstrate how timeseries data must be prepared for modelling, as well as gather model performance results from using different frameworks.  
@@ -209,9 +215,7 @@ problem, the analysis for feature selection is further complicated by the consid
 interval k. Exploration of timeseries forecasting practices should bring insights.  The use of SelectFromModel in the XGBoost notebook provided a convenient feature selection tool
 that warrants further exploration.  Its results suggested a considerable paring down of the inputs might still deliver good model performance.  
 
-### State Space Modelling  
 
-(comments and links)
 
 ### Model Algorithms: Which to Choose?  
 
@@ -227,7 +231,12 @@ quickly becomes large.
 From this paper:  "The short-term memory of recurrent networks is one of their major drawbacks and one of the main reasons why attention mechanisms and Transformers were originally 
 introduced in deep learning (see Section 4.1)."
 
-The approach has already evolved past a "simple" LSTM, making it an introduction to deep learning for timeseries, but not a canditate for a model.
+The approach has already evolved past a "simple" LSTM, making it an introduction to deep learning for timeseries, but advances have been made in this area to newer architectures that
+warrant investigation.
+
+An interesting "first quick pass" at comparing machine learning algorithms for timeseries could be PyCaret's regression module.  It effectively runs many different algorithms on the
+data supplied, with little upfront configuration, and delivers various model error metrics.  One could choose a small subset of these algorithms to investigate and tune further from there.  
+An example is supplied here:  https://www.datacamp.com/tutorial/tutorial-time-series-forecasting.  
 
 ### Ready-to-Serve Packages  
 
@@ -236,9 +245,15 @@ Tensorflow does allow for the use of timeseries data that has not been "phrased 
 like RandomForest, which makes use of bootstrapping, could not be used on data that has not been lagged for row-by-row input to a model.  The random sampling would lose the temporal
 information that is only maintained by respecting the sequence of rows and their values in time.
 
-There are packages like pyts that offer timeseries classification.  Similar tools must exist or are being developed for timeseries regression.
+There are packages like pyts that offer timeseries classification.  
+
+There are also other modelling packages such as Facebook's Prophet, and likely many other open-source timeseries modelling packages offered.  
 
 For an example of Tensorflow's treatment of timeseries:  https://www.tensorflow.org/tutorials/structured_data/time_series  
+
+### State Space Modelling  
+
+(comments and links)
 
 ### Refactoring and Automation
 There are still many pieces of code that are repeated throughout the notebooks.  Putting some of these in functions residing in modules would allow for standardization.
