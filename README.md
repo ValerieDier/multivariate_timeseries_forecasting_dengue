@@ -207,7 +207,7 @@ There was therefore less emphasis on selecting key features for the model in the
 through correlation and autocorrelation calculations.  The features could be revisited to see which ones to keep, though as the data must be phrased into a supervised learning 
 problem, the analysis for feature selection is further complicated by the consideration of lagged variables.  That is, some features may be more impactful *if* lagged by some 
 interval k. Exploration of timeseries forecasting practices should bring insights.  The use of SelectFromModel in the XGBoost notebook provided a convenient feature selection tool
-that warrants further exploration.
+that warrants further exploration.  Its results suggested a considerable paring down of the inputs might still deliver good model performance.  
 
 ### State Space Modelling  
 
@@ -218,9 +218,7 @@ that warrants further exploration.
 There are many papers on every type of model one can have heard (or not yet) heard of, for use is a multitude of sectors, industries, and services.  Timeseries forecasting has its
 own niche, but one can imagine the different types of challenges encountered in timeseries forecasting for different situations.
 
-A few papers to choose from:
-
-General Review of Models Used for Timeseries Modelling
+General Review of Models Used for Timeseries Modelling:
 https://www.mdpi.com/2078-2489/14/11/598
 
 The paper is a review of a large number of modelling algorithms.  Factoring in the various approaches that can be used to prepare the data for timeseries modelling, the number of options
@@ -229,7 +227,7 @@ quickly becomes large.
 From this paper:  "The short-term memory of recurrent networks is one of their major drawbacks and one of the main reasons why attention mechanisms and Transformers were originally 
 introduced in deep learning (see Section 4.1)."
 
-The approach has already evolved past LSTM, making it an introduction to deep learning for timeseries, but not a canditate for a model.
+The approach has already evolved past a "simple" LSTM, making it an introduction to deep learning for timeseries, but not a canditate for a model.
 
 ### Ready-to-Serve Packages  
 
@@ -242,8 +240,9 @@ There are packages like pyts that offer timeseries classification.  Similar tool
 
 For an example of Tensorflow's treatment of timeseries:  https://www.tensorflow.org/tutorials/structured_data/time_series  
 
-### Refactoring  
+### Refactoring and Automation
 There are still many pieces of code that are repeated throughout the notebooks.  Putting some of these in functions residing in modules would allow for standardization.
+
 
 ### Pipelining (?)
 
