@@ -46,10 +46,10 @@ data.  This is addressed by splitting the training sets into training and test s
 2. Examine the variables' distributions, autocorrelation on the target (time t to t-k), correlations between target and lagged features  
 3. Develop an idea of the ideal time lags on which to model the timeseries  
 4. Model the timeseries using a variety of model algorithms
-* Autoregression, from Statsmodels
-* Random Forest, from Scikit Learn
-* XGBoost, from XGBoost/Scikit Learn
-* LSTM (long short term memory), from Keras-Tensorflow
+>* Autoregression, from Statsmodels
+>* Random Forest, from Scikit Learn
+>* XGBoost, from XGBoost/Scikit Learn
+>* LSTM (long short term memory), from Keras-Tensorflow
 5. Evaluate model performance metrics between models, revise lags and hyperparameters as necessary
 6. Select the best model developed
 7. Re-think the features: can we apply a select_features function compatible with the model algorithm with the best results so far? Can it point to better feature selection?
@@ -125,10 +125,10 @@ This is done for the target variable to regress against its lagged self, and for
 ## Models
 
 The model frameworks trialled include:
-* Autoregression, from Statsmodels
-* Random Forest, from Scikit Learn
-* XGBoost, from XGBoost/Scikit Learn
-* LSTM (long short term memory), from Keras-Tensorflow
+>* Autoregression, from Statsmodels
+>* Random Forest, from Scikit Learn
+>* XGBoost, from XGBoost/Scikit Learn
+>* LSTM (long short term memory), from Keras-Tensorflow
 
 Hyperparameter tuning was trialled using GridSearchCV on the RandomForest Regressor and the XGBoost Regressor.  
 SelectFromModel was used on the XGBoost Regressor.
@@ -195,7 +195,7 @@ MAE values were nearer to 7-9 for the XGBoost Regressors without dynamic updatin
 Long short-term memory networks are a special type of RNN (recurrent neural network).  The diagram below, something that resembles stereo assembly instructions from the late twentieth
 century, may help visualize how it works:
 
-![Alt Text](./img/LSTM3-chain)
+![Alt Text](./img/LSTM3-chain.png)
 (LSTM diagram image, and conceptual understanding, courtesy of colah's blog: https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
 Briefly put, the LSTM has repeating modules with information passing through - the cell "state" - and the inner workings depicted in the diagram represent various "gates" that act
