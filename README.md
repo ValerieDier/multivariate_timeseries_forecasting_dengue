@@ -204,7 +204,7 @@ through.  This impacts the updates to the cell state as it flows through a modul
 
 Now, how to configure:
 
-"Configuring neural networks is difficult because there is no good theory on how to do it." 
+"Configuring neural networks is difficult because there is no good theory on how to do it."  
 (wisely offered by https://machinelearningmastery.com/tune-lstm-hyperparameters-keras-time-series-forecasting/)
 
 Observations to date include the following properties that can be adjusted:
@@ -232,7 +232,8 @@ day.
 ## Model performance  
 
 Mean absolute error is an error metric often used for its interpretability: it's in the original units of the predicted variable.  This can make for some cumbersome inversions if scaling
-was used to preprocess the inputs to a model.  (more?)
+was used to preprocess the inputs to a model.  It is a typical error used in modelling competitions, though MAPE (mean absolute percentage error) occasionally makes an appearance for
+its interpretability as a precent, rather than units of measure.
 
 ## Challenges  
 
@@ -252,8 +253,8 @@ relationship between two variables of interest.  Further study is required to ap
 Statistics by Jim often delivers a good starting point:  https://statisticsbyjim.com/time-series/autocorrelation-partial-autocorrelation/  
 
 ### Feature Selection  
-The focus of this project was to demonstrate how timeseries data can be prepared for modelling, as well as gather model performance results from using different frameworks.  
-There was therefore less emphasis on selecting key features for the model in the EDA, and more effort spent on examining relationships between the target and the lagged variables
+The focus of this project was to demonstrate how timeseries data can be prepared for modelling, as well as gather model performance results from using different frameworks. There 
+was therefore less emphasis on selecting key features for the model in the EDA, and more effort spent on examining relationships between the target and the lagged variables
 through correlation and autocorrelation calculations.  The features could be revisited to see which ones to keep, though as the data must be phrased into a supervised learning 
 problem, the analysis for feature selection is further complicated by the consideration of lagged variables.  That is, some features may be more impactful *if* lagged by some 
 interval k. Exploration of timeseries forecasting practices should bring insights.  The use of SelectFromModel in the XGBoost notebook provided a convenient feature selection tool
@@ -326,11 +327,12 @@ a dataframe suitable for timeseries modelling using supervised learning, to send
 from the author's website, with a few adaptations made as necessary.  
 
 ChatGPT enabled much faster automation of plotting, as well as merging of variable names to nameless features when model outputs were shorn of their human-friendly details.
-Troubleshooting was also aided by prompting and careful review of suggestions.  
+Troubleshooting was also aided by prompting and careful review of suggestions.  I learned from it, and it learned from me.  Its help with syntax and functions I'd never heard of
+allows for energy and time to be redirected to analysis, critical review, and a broader systems-view on modelling methodology and operationalization.
 
 Professors from my university years provided the canvas for my interest in system identification.  
 
-The advent of large-scale but more importantly, *regular and frequent* collection of data supplies the possibility of predicting any number of events that, given adequate notice,
+The advent of large-scale, but more importantly, *regular and frequent* collection of data supplies the possibility of predicting any number of events that, given adequate notice,
 can be handled more smoothly than with little or no preparation.  The real challenge is in balancing these possibilities against the risks of poor forecasting and the potential for
-irresponsible collection, storage and use of data.
+irresponsible collection, storage, and use of data.
 
