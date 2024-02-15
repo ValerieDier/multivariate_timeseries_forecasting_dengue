@@ -243,7 +243,7 @@ and try different configurations.
 * There were variables that seemed almost the same, including many temperature variables.  Much more investigation is required to understand their inclusion.  
 * Producing correctly formatted timeseries data for supervised learning takes many steps and checks.  It's time-consuming even when using another's template, especially if it's 
 being adapted to a different situation.  
-*Burden of choice: in a time when modelling approaches can be trialled very quickly across a broad swath of algorithms, a better methodology for choosing a modelling framework is
+* Burden of choice: in a time when modelling approaches can be trialled very quickly across a broad swath of algorithms, a better methodology for choosing a modelling framework is
 sorely needed.  This project was an early prospecting endeavour, and by no means an exhaustive review of all options.  There is much to explore from here.  
 
 ## Development Work  
