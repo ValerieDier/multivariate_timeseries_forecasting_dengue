@@ -327,9 +327,9 @@ The extensive templates found on https://machinelearningmastery.com/ were invalu
 a dataframe suitable for timeseries modelling using supervised learning, to sending test data row-by-row for dynamic model refitting, and likely many more strategies were gathered
 from the author's website, with a few adaptations made as necessary.  
 
-ChatGPT enabled much faster automation of plotting, as well as merging of variable names to nameless features when model outputs were shorn of their human-friendly details.
-Troubleshooting was also aided by prompting and careful review of suggestions.  I learned from it, and it learned from me.  Its help with syntax and functions I'd never heard of
-allows for energy and time to be redirected to analysis, critical review, and a broader systems-view on modelling methodology and operationalization.  
+ChatGPT enabled much faster automation of plotting, as well as merging of variable names to nameless features when model outputs or the results of numpy operations were shorn of 
+their human-friendly details.  Troubleshooting was also aided by prompting and careful review of suggestions.  I learned from it, and it learned from me.  Its help with syntax and
+functions I'd never heard of allows for energy and time to be redirected to analysis, critical review, and a broader systems-view on modelling methodology and operationalization.  
 
 Professors from my university years provided the canvas for my interest in system identification.  
 
@@ -337,3 +337,13 @@ The advent of large-scale, but more importantly, *regular and frequent* collecti
 can be handled more smoothly than with little or no preparation.  The real challenge is in balancing these possibilities against the risks of poor forecasting and the potential for
 irresponsible collection, storage, and use of data.  
 
+## Revision History  
+
+**February 15 2024**  
+This project was first submitted completion of Lighthouse Labs' Data Science program.  The comments above on further development reflect the status of the
+work at that date.
+
+**February 26 2024** 
+a) train_test_split_rows_reserved now used across notebooks to replace "one of" approaches.  Standardization was the goal; not increased brevity of code.  
+b) Attempts were made to pipeline the LSTM model development to correctly implement the scaler after the dataset is split into a training and a test set, but challenges around array
+dimensions - specifically what's required by the Tensorflow LSTM vs what the scaler can handle - are proving tricky to resolve.  

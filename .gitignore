@@ -1,3 +1,6 @@
+# other things I'd like to be ignored
+notebooks/rf_trial_nlags_MV_check_input.ipynb
+
 # boilerplate python gitignore supplied courtesy of github
 data/*
 
