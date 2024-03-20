@@ -347,3 +347,8 @@ work at that date.
 a) train_test_split_rows_reserved now used across notebooks to replace "one of" approaches.  Standardization was the goal; not increased brevity of code.  
 b) Attempts were made to pipeline the LSTM model development to correctly implement the scaler after the dataset is split into a training and a test set, but challenges around array
 dimensions - specifically what's required by the Tensorflow LSTM vs what the scaler can handle - are proving tricky to resolve.  
+
+**March 19 2024**
+a) primarily added a pipeline using the KerasRegressor wrapper on the LSTM model and Function Transformer.  Scaling now takes place before the dataset is split into a training and
+test set (as I wished to address).  The next step is to investigate setting up a pipeline using optuna.
+
