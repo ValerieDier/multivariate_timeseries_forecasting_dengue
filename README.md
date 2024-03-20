@@ -343,12 +343,12 @@ irresponsible collection, storage, and use of data.
 This project was first submitted completion of Lighthouse Labs' Data Science program.  The comments above on further development reflect the status of the
 work at that date.
 
-**February 26 2024** 
+**February 26 2024**  
 a) train_test_split_rows_reserved now used across notebooks to replace "one of" approaches.  Standardization was the goal; not increased brevity of code.  
 b) Attempts were made to pipeline the LSTM model development to correctly implement the scaler after the dataset is split into a training and a test set, but challenges around array
 dimensions - specifically what's required by the Tensorflow LSTM vs what the scaler can handle - are proving tricky to resolve.  
 
-**March 19 2024**
+**March 19 2024**  
 a) primarily added a pipeline using the KerasRegressor wrapper on the LSTM model and Function Transformer.  Scaling now takes place before the dataset is split into a training and
 test set (as I wished to address).  The next step is to investigate setting up a pipeline using optuna.
 
