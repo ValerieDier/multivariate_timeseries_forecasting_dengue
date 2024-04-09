@@ -352,6 +352,6 @@ dimensions - specifically what's required by the Tensorflow LSTM vs what the sca
 a) primarily added a pipeline using the KerasRegressor wrapper on the LSTM model and Function Transformer.  Scaling now takes place before the dataset is split into a training and
 test set (as I wished to address).  The next step is to investigate setting up a pipeline using optuna.  
 
-**April 9 2024**
+**April 9 2024**  
 The lstm_tmseries_optuna notebook has a working optuna pipeline for this dataset's LSTM trials.  The objective was to amend another's optuna set-up to work on numpy input data and for
 an LSTM.  The choice of imputer and scaler doesn't reflect any analysis and will be revisited alongside the EDA notebook for more front-end analysis of the data.
